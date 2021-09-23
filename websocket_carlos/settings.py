@@ -131,7 +131,7 @@ DATABASES = {
         'NAME': 'id17622113_id16359616_sensor',
         'USER': 'id17622113_id16359616_root',
         'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'HOST': 'db',
         'PORT': 3306,
     }
 }
