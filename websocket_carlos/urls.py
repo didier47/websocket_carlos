@@ -13,9 +13,29 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
+from django.conf.urls import url
+from django.urls import include
+from drf_yasg import openapi
+from drf_yasg.views import get_schema_view
+from rest_framework import permissions
+from rest_framework.routers import SimpleRouter
+
+from websocket_app.views import DataViewSet
+
+schema_view = get_schema_view(
+    openapi.Info(
+        title="Websocket",
+        default_version='v1',
+        description="Api Data Voltajes"
+    ),
+    public=True,
+    permission_classes=(permissions.AllowAny,),
+)
+
+router = SimpleRouter()
+router.register('data', DataViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    url(r'^api/', include(router.urls)),
+    url(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
