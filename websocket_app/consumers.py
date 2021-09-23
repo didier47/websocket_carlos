@@ -15,8 +15,7 @@ class DataConsumer(GenericAsyncAPIConsumer):
 
     @data_activity.serializer
     def data_activity(self, instance: DataModel, action, **kwargs) -> DataSerializer:
-        instances = list(DataModel.objects.all())
-        return DataSerializer(instance=instances, many=True)
+        return DataSerializer(instance)
 
     async def connect(self, **kwargs):
         await self.data_activity.subscribe()
