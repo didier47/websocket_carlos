@@ -1,7 +1,7 @@
 # Websocket
 
 
-Backend project implementing a single table on a MySQL database and a websocket observing every CURD model operation. (CERTIFICADO)
+Backend project implementing a single table on a MySQL database and a websocket observing every CURD model operation. (DEV)
 
 ## Getting Started
 
