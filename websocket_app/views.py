@@ -1,10 +1,9 @@
-from rest_framework.mixins import CreateModelMixin, RetrieveModelMixin, ListModelMixin, UpdateModelMixin
-from rest_framework.viewsets import GenericViewSet
+from rest_framework.viewsets import ModelViewSet
 
 from websocket_app.models import DataModel
 from websocket_app.serializers import DataSerializer
 
 
-class DataViewSet(CreateModelMixin, RetrieveModelMixin, ListModelMixin, UpdateModelMixin, GenericViewSet):
+class DataViewSet(ModelViewSet):
     queryset = DataModel.objects.all()
     serializer_class = DataSerializer
