@@ -1,1 +1,1 @@
-web: gunicorn websocket_carlos.wsgi
+web: daphne websocket_carlos.asgi:channel_layer --port 8000 --bind 0.0.0.0 -v2
