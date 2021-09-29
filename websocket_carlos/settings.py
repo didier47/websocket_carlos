@@ -130,9 +130,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'id17622113_id16359616_sensor',
-        'USER': 'id17622113_id16359616_root',
-        'PASSWORD': 'root',
-        'HOST': 'db',
+        'USER': 'root',
+        'PASSWORD': 'Familia01',
+        'HOST': 'database-prueba-dos.cf65ie1kg3hb.us-east-2.rds.amazonaws.com',
         'PORT': 3306,
     }
 }
